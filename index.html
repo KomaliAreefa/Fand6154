@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our 5 Years Beautiful Bond ❤️</title>
+
+<style>
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 130px;
+}
+
+body {
+    background: #080008;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #ff6ba9;
+    text-shadow: 0 0 15px #ff1682;
+    margin-bottom: 18px;
+}
+
+h2 {
+    color: #ff83b5;
+    margin-bottom: 12px;
+}
+
+p {
+    line-height: 1.9;
+}
+
+/* CONTAINERS */
+
+.container {
+    width: 92%;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid #ff4d94;
+    border-radius: 22px;
+    box-shadow: 0 0 25px #ff168255;
+    position: relative;
+    z-index: 2;
+}
+
+#surprise {
+    display: none;
+}
+
+/* LOGIN */
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    background: #190b18;
+    border: 1px solid #ff4d94;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+button {
+    padding: 13px 25px;
+    background: linear-gradient(45deg,#ff1682,#ff78b6);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 18px;
+    box-shadow: 0 0 15px #ff1682;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* NAVIGATION */
+
+.navbar {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: rgba(15,0,15,0.97);
+    padding: 15px 8px;
+    border-bottom: 1px solid #ff4d94;
+    box-shadow: 0 0 15px #ff168255;
+}
+
+.navbar h2 {
+    margin-bottom: 12px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 20px;
+    border: 1px solid #ff4d94;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #ff1682;
+    box-shadow: 0 0 15px #ff1682;
+}
+
+/* MESSAGES */
+
+.message {
+    background: rgba(255,77,148,0.10);
+    border: 1px solid #ff4d9455;
+    padding: 22px;
+    border-radius: 18px;
+    margin: 25px 0;
+    line-height: 1.9;
+}
+
+/* PHOTOS */
+
+.photo {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    object-position: center;
+    background: #190b18;
+    border: 2px solid #ff6ba9;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* LETTER */
+
+#letter {
+    display: none;
+    animation: appear 1s ease;
+}
+
+/* FINAL SURPRISE */
+
+#final {
+    padding: 35px 15px;
+    border: 1px solid #ff6ba9;
+    border-radius: 20px;
+    background: rgba(255,77,148,0.12);
+    margin-top: 30px;
+}
+
+/* HEART ANIMATION */
+
+.heart {
+    position: fixed;
+    color: #ff4d94;
+    animation: float 6s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* FOOTER */
+
+footer {
+    color: #ff91bd;
+    padding: 30px;
+}
+
+/* MOBILE */
+
+@media(max-width:500px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .photo {
+        height: 280px;
+    }
+
+    .nav-links {
+        gap: 7px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING HEARTS -->
+
+<div id="hearts"></div>
+
+
+<!-- LOGIN FORM -->
+
+<div class="container" id="login">
+
+    <h1>❤️ A Secret For You ❤️</h1>
+
+    <p>Someone special has prepared something for you...</p>
+
+    <br>
+
+    <p style="color:#ff91bd;">
+        Only my favourite person can unlock this surprise!
+    </p>
+
+    <br>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Enter Username"
+    >
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+    >
+
+    <button onclick="login()">
+        Unlock My Surprise ❤️
+    </button>
+
+    <p id="error" style="color:#ff6b8b;margin-top:15px;"></p>
+
+</div>
+
+
+<!-- NAVIGATION BAR -->
+
+<nav class="navbar" id="navbar">
+
+    <h2>❤️ Our Beautiful Bond ❤️</h2>
+
+    <div class="nav-links">
+
+        <a href="#home">🏠 Home</a>
+
+        <a href="#bond">❤️ Our Bond</a>
+
+        <a href="#memories">📸 Memories</a>
+
+        <a href="#letter">💌 Letter</a>
+
+        <a href="#final">🎁 Surprise</a>
+
+    </div>
+
+</nav>
+
+
+<!-- MAIN SURPRISE PAGE -->
+
+<div class="container" id="surprise">
+
+
+<!-- HOME -->
+
+<section id="home">
+
+    <h1>Welcome, My Favourite Brother! ❤️</h1>
+
+    <p>You finally unlocked my little surprise!</p>
+
+    <br>
+
+    <h1>✨ 1 MONTH TO GO ✨</h1>
+
+    <h2>Our 5 Years Beautiful Bond ❤️</h2>
+
+    <div class="message">
+
+        Five years of friendship, love, fights,
+        laughter, care and unforgettable memories.
+
+        <br><br>
+
+        Can you believe we are just one month
+        away from completing five beautiful years?
+
+        <br><br>
+
+        Before our special day arrives,
+        let's travel back to where our beautiful
+        memories began.
+
+    </div>
+
+</section>
+
+
+<!-- OUR BOND -->
+
+<section id="bond">
+
+    <div class="message">
+
+        <h1>❤️ Our Special Bond ❤️</h1>
+
+        <p>
+
+        Some people enter our lives and become
+        a beautiful part of our story.
+
+        You are one of those special people.
+
+        <br><br>
+
+        We have shared smiles, silly fights,
+        funny moments and countless memories.
+
+        <br><br>
+
+        Five years is not just a number.
+        It is a journey filled with emotions
+        that words cannot completely describe.
+
+        <br><br>
+
+        I am grateful for every moment.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section id="memories">
+
+    <h1>📸 Let's Recollect Our Memories ❤️</h1>
+
+    <p>
+        Every picture has a story.
+        Every smile has a reason.
+        Every memory has a special place in my heart.
+    </p>
+
+
+    <!-- MEMORY 1 -->
+
+    <div class="message">
+
+        <img src="C:\Users\komal\OneDrive\Pictures\red dress.jpeg" class="photo"
+        alt="Memory 1">
+
+        <h2>❤️ Our Beginning</h2>
+
+        <p>
+
+        Every beautiful journey has a beginning.
+
+        I never knew these moments would become
+        some of my favourite memories.
+
+        Our beginning will always be special.
+
+        </p>
+
+    </div>
+
+
+    <!-- MEMORY 2 -->
+
+    <div class="message">
+
+        <img src="C:\Users\komal\OneDrive\Pictures\comedy.jpeg" class="photo"
+        alt="Memory 2">
+
+        <h2>😂 Our Crazy Moments</h2>
+
+        <p>
+
+        Those silly talks, unlimited laughter,
+        funny expressions and crazy moments!
+
+        Life is never boring when you are around.
+
+        </p>
+
+    </div>
+
+
+    <!-- MEMORY 3 -->
+
+    <div class="message">
+
+        <img src="C:\Users\komal\OneDrive\Pictures\favourites.jpeg" class="photo"
+        alt="Memory 3">
+
+        <h2>🥹 Unforgettable Memories</h2>
+
+        <p>
+
+        Some moments cannot be explained in words.
+
+        They are simply felt by the heart.
+
+        I wish I could relive these moments again July 6th 2023.
+
+        </p>
+
+    </div>
+
+
+    <!-- MEMORY 4 -->
+
+    <div class="message">
+
+        <img src="C:\Users\komal\OneDrive\Pictures\Same Outfit.jpeg" class="photo"
+        alt="Memory 4">
+
+        <h2>😜 Our Little Fights</h2>
+
+        <p>
+
+        We fight over silly things,
+        tease each other and sometimes
+        irritate each other.
+
+        But I wouldn't exchange these memories
+        for anything.
+
+        </p>
+
+    </div>
+
+
+    <!-- MEMORY 5 -->
+
+    <div class="message">
+
+        <img src="C:\Users\komal\OneDrive\Pictures\Raksha.jpeg" class="photo"
+        alt="Memory 5">
+
+        <h2>🫂 A Special Bond</h2>
+
+        <p>
+
+        Five years passed, but the happiness
+        of having you in my life remains special.
+
+        Thank you for being part of my journey.
+
+        </p>
+
+    </div>
+
+
+    <!-- MEMORY 6 -->
+
+    <div class="message">
+
+        <img src="C:\Users\komal\OneDrive\Pictures\Tirupati.jpeg" class="photo"
+        alt="Memory 6">
+
+        <h2>💗 Forever Memories</h2>
+
+        <p>
+
+        These memories are not just pictures.
+
+        They are little pieces of happiness
+        that I will carry forever.
+
+        </p>
+
+    </div>
+    
+    <div class="message">
+
+        <img src="C:\Users\komal\OneDrive\Pictures\Rakshabandan.jpeg" class="photo"
+        alt="Memory 7">
+
+        <h2>💗 Rakshabhandan </h2>
+
+        <p>
+
+        You Will Always be the Brother my heart will choose Again and Again..
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- BEFORE LETTER -->
+
+<section>
+
+    <div class="message">
+
+        <h1>❤️ One Last Thing...</h1>
+
+        <p>
+
+        We have collected so many beautiful
+        memories in these five years.
+
+        <br><br>
+
+        But this is not the end of our story.
+
+        We still have thousands of smiles,
+        countless memories and many more
+        beautiful years waiting for us.
+
+        <br><br>
+
+        Now I have something special
+        to tell you from my heart...
+
+        </p>
+
+        <button onclick="showLetter()">
+            Open My Secret Letter 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SECRET LETTER -->
+
+<section id="letter">
+
+    <div class="message">
+
+        <h1>💌 My Dear Brother</h1>
+
+        <p>
+
+        I don't know how to express everything
+        in words, but I want you to know
+        how special you are to me.
+
+        <br><br>
+
+        Thank you for every beautiful memory,
+        laughter, care and happiness.
+
+        <br><br>
+
+        Sometimes we may not express our feelings,
+        but some bonds are beyond words.
+
+        <br><br>
+
+        Five years is not just a number.
+
+        It is a collection of beautiful memories
+        that I will always treasure.
+
+        <br><br>
+
+        I wish our bond becomes stronger
+        with every passing year.
+
+        <br><br>
+
+        <b style="color:#ff6ba9;">
+
+        No matter how many years pass,
+        you will always have a special place
+        in my heart.
+
+        <br><br>
+
+        Love you forever, my brother! ❤️🫂
+
+        </b>
+
+        </p>
+
+        <br>
+
+        <button onclick="showFinal()">
+            One More Surprise 🎁
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL SURPRISE -->
+
+<section id="final" style="display:none;">
+
+    <h1>❤️ FOREVER 5 YEARS & BEYOND ❤️</h1>
+
+    <h2>Our Story Never Ends! 🫂</h2>
+
+    <p>
+
+    Five years completed soon...
+
+    But our beautiful journey has
+    so many more chapters to come.
+
+    <br><br>
+
+    More smiles, more fights,
+    more laughter and endless memories.
+
+    <br><br>
+
+    You will always be special.
+
+    </p>
+
+    <h1 style="margin-top:25px;">
+        LOVE YOU FOREVER! ❤️
+    </h1>
+
+    <p>Made with lots of love, just for you. 💗</p>
+
+</section>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer id="footer" style="display:none;">
+
+    Made with ❤️ for my favourite brother.
+
+    <br>
+
+    Our 5 Years Bond – Forever & Always.
+
+</footer>
+
+
+<script>
+
+
+// LOGIN FUNCTION
+
+function login() {
+
+    let user =
+    document.getElementById("username").value.trim();
+
+    let pass =
+    document.getElementById("password").value;
+
+    if(user === "fand" && pass === "6154") {
+
+        document.getElementById("login").style.display = "none";
+
+        document.getElementById("surprise").style.display = "block";
+
+        document.getElementById("navbar").style.display = "block";
+
+        document.getElementById("footer").style.display = "block";
+
+        window.scrollTo(0,0);
+
+    }
+
+    else {
+
+        document.getElementById("error").innerText =
+        "Wrong username or password! Try again ❤️";
+
+    }
+
+}
+
+
+// OPEN SECRET LETTER
+
+function showLetter() {
+
+    document.getElementById("letter").style.display = "block";
+
+    document.getElementById("letter").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+// FINAL SURPRISE
+
+function showFinal() {
+
+    document.getElementById("final").style.display = "block";
+
+    document.getElementById("final").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+// FLOATING HEARTS
+
+function createHeart() {
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "♥";
+
+    heart.style.left =
+    Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+    (15 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+    (4 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 9000);
+
+}
+
+setInterval(createHeart, 500);
+
+
+</script>
+
+</body>
+</html>
